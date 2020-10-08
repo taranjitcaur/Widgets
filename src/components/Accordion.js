@@ -1,12 +1,13 @@
 import React from 'react';
 
-const Accordion = ({items})=> {
-    const onItemClicked = (index) => {
-        console.log('Item clicked', index);
-    }
-    const renderedItems =  items.map((item,index) => {
+class Accordion extends React.Component {
+       state = {indexClicked:''}
+      onItemClicked = (index) => {
+        this.setState({indexClicked: index});
+      }
+      renderedItems =  this.props.items.map((item,index) => {
         return (<React.Fragment key={item.title}>
-        <div className="title active" onClick={() => onItemClicked(index)}>
+        <div className="title active" onClick={() => this.onItemClicked(index)}>
             <i className="dropdown icon"></i>
             {item.title}
         </div>
@@ -15,7 +16,15 @@ const Accordion = ({items})=> {
         </div>
         </React.Fragment>  
         )
-      })   
-      return renderedItems;
- }
+      }) 
+    
+    render() {
+       return(
+         <div>
+          {this.state.indexClicked }
+         {this.renderedItems}
+         </div>         
+         );
+      }
+  }
 export default Accordion;
