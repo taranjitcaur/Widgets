@@ -19,6 +19,6 @@ const Accordion = ({items}) => {
       )
     }
   )
- return <div className="ui styled accordion">{renderedItems}</div>;
+ return <div className="eight wide column"><label>Questionnaire</label><div className="ui styled accordion">{renderedItems}</div></div>;
 }
 export default Accordion;
