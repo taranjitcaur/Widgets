@@ -1,6 +1,7 @@
 import React from 'react';
 import Accordion from './components/Accordion';
 import Search from './components/Search';
+import Dropdown from './components/Dropdown';
 
 const items = [
     {
@@ -17,12 +18,30 @@ const items = [
     }
 ]
 
+const dropDown = [
+    {
+        'label': 'The color is red',
+        'value': 'red'
+    },
+    {
+        'label': 'The color is blue',
+        'value': 'blue'
+    },
+    {
+        'label': 'A shade of grey',
+        'value': 'grey'
+    }
+]
+
+
 export default () => {
     return(
     <div className="ui grid">
-        <Accordion items={items}/>   
-        <Search/>  
+        <Dropdown listContent={dropDown} selectVal={'blue'}/>
+        <Accordion items={items}/> 
+        <Search/>   
     </div>
     );
 };
+
 

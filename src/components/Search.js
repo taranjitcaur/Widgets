@@ -16,7 +16,6 @@ const Search = () => {
           srsearch: term,
         },
       });
-
       setResults(data.query.search);
     };
 
